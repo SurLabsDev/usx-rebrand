@@ -22,10 +22,10 @@ export function SiteHeader() {
             </a>
           ))}
         </nav>
-        <div className="flex items-center gap-2.5">
+        <div className="flex items-center gap-2">
           <Link
             href="/panel"
-            className="rounded-lg px-3.5 py-2 text-sm font-medium text-pine transition-colors hover:bg-mint"
+            className="hidden rounded-lg px-3.5 py-2 text-sm font-medium text-pine transition-colors hover:bg-mint sm:block"
           >
             Ingresar
           </Link>
@@ -36,6 +36,20 @@ export function SiteHeader() {
             Crear casillero
           </Link>
         </div>
+      </div>
+      {/* Accesos rápidos a secciones — solo mobile */}
+      <div className="overflow-x-auto border-t border-line/70 md:hidden [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <nav className="flex min-w-max gap-1 px-3 py-2 text-sm" aria-label="Secciones">
+          {NAV.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className="whitespace-nowrap rounded-lg px-3 py-1.5 text-ink-soft transition-colors hover:bg-mint hover:text-pine"
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
       </div>
     </header>
   );

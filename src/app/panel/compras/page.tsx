@@ -51,7 +51,29 @@ export default function ComprasPage() {
                   </button>
                 </div>
               </div>
-              <table className="w-full text-sm">
+              {/* Mobile: cada artículo apilado */}
+              <ul className="divide-y divide-line/40 sm:hidden">
+                {c.items.map((i) => (
+                  <li key={i.nombre} className="flex items-start justify-between gap-4 px-5 py-3.5">
+                    <div className="min-w-0">
+                      <p className="text-sm font-medium text-ink">{i.nombre}</p>
+                      <p className="mt-1 text-xs text-ink-soft">
+                        <Mono>{i.cantidad}</Mono> × <Mono>USD {i.precio.toFixed(2)}</Mono>
+                      </p>
+                    </div>
+                    <Mono className="shrink-0 text-sm font-semibold text-pine">
+                      {(i.precio * i.cantidad).toFixed(2)}
+                    </Mono>
+                  </li>
+                ))}
+                <li className="flex items-center justify-between bg-paper px-5 py-3.5">
+                  <span className="text-sm font-medium text-ink">Total</span>
+                  <Mono className="font-semibold text-pine">{money(total)}</Mono>
+                </li>
+              </ul>
+
+              {/* Desktop: tabla */}
+              <table className="hidden w-full text-sm sm:table">
                 <caption className="sr-only">Artículos del carrito {c.id}</caption>
                 <thead>
                   <tr className="border-b border-line/60 text-left text-xs uppercase tracking-wide text-ink-soft">

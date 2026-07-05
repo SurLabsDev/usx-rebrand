@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Logo } from "@/components/logo";
 import { PanelNav } from "@/components/panel-nav";
+import { PanelMobileNav } from "@/components/panel-mobile-nav";
 import { user } from "@/lib/data";
 
 export default function PanelLayout({ children }: { children: React.ReactNode }) {
@@ -48,40 +49,14 @@ export default function PanelLayout({ children }: { children: React.ReactNode })
             </div>
           </div>
           {/* Nav móvil */}
-          <div className="overflow-x-auto border-t border-line px-2 py-2 lg:hidden">
+          <div className="overflow-x-auto border-t border-line px-2 py-2 lg:hidden [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             <div className="min-w-max">
-              <MobileNav />
+              <PanelMobileNav />
             </div>
           </div>
         </header>
         <main className="flex-1 px-4 py-8 sm:px-8">{children}</main>
       </div>
     </div>
-  );
-}
-
-function MobileNav() {
-  const items = [
-    { href: "/panel", label: "Resumen" },
-    { href: "/panel/paquetes", label: "Paquetes" },
-    { href: "/panel/guias", label: "Guías" },
-    { href: "/panel/delivery", label: "Delivery" },
-    { href: "/panel/destinatarios", label: "Destinatarios" },
-    { href: "/panel/direcciones", label: "Direcciones" },
-    { href: "/panel/cuenta", label: "Mi cuenta" },
-    { href: "/panel/compras", label: "Compras" },
-  ];
-  return (
-    <nav aria-label="Secciones del panel" className="flex gap-1">
-      {items.map((i) => (
-        <Link
-          key={i.href}
-          href={i.href}
-          className="rounded-lg px-3 py-1.5 text-sm text-ink-soft hover:bg-mint hover:text-pine"
-        >
-          {i.label}
-        </Link>
-      ))}
-    </nav>
   );
 }

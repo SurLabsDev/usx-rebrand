@@ -21,7 +21,7 @@ export default function Home() {
       <main className="flex-1">
         {/* ── Hero ─────────────────────────────────────────── */}
         <section className="relative overflow-hidden">
-          <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 pb-16 pt-14 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:pb-24 lg:pt-20">
+          <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-12 pt-9 sm:gap-12 sm:px-6 sm:pb-16 sm:pt-14 lg:grid-cols-[1.15fr_0.85fr] lg:pb-24 lg:pt-20">
             <div>
               <p className="eyebrow text-emerald">Courier Miami · Madrid → Montevideo</p>
               <h1 className="font-display mt-4 text-4xl text-pine sm:text-5xl lg:text-[3.4rem]">
@@ -70,7 +70,7 @@ export default function Home() {
         </section>
 
         {/* ── Cómo funciona ────────────────────────────────── */}
-        <section id="como-funciona" className="mx-auto max-w-6xl scroll-mt-20 px-4 py-20 sm:px-6">
+        <section id="como-funciona" className="mx-auto max-w-6xl scroll-mt-28 px-4 py-14 sm:scroll-mt-20 sm:px-6 sm:py-20">
           <SectionLabel>Cómo funciona</SectionLabel>
           <h2 className="font-display mt-3 max-w-xl text-3xl text-pine sm:text-4xl">
             De la tienda a tus manos, en tres pasos
@@ -106,8 +106,8 @@ export default function Home() {
         </section>
 
         {/* ── Tarifas ──────────────────────────────────────── */}
-        <section id="tarifas" className="scroll-mt-20 bg-mint/60">
-          <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+        <section id="tarifas" className="scroll-mt-28 bg-mint/60 sm:scroll-mt-20">
+          <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
             <SectionLabel>Tarifas</SectionLabel>
             <h2 className="font-display mt-3 text-3xl text-pine sm:text-4xl">
               Un precio por kilo. Eso es todo.
@@ -181,7 +181,7 @@ export default function Home() {
         </section>
 
         {/* ── Compras ──────────────────────────────────────── */}
-        <section id="compras" className="mx-auto max-w-6xl scroll-mt-20 px-4 py-20 sm:px-6">
+        <section id="compras" className="mx-auto max-w-6xl scroll-mt-28 px-4 py-14 sm:scroll-mt-20 sm:px-6 sm:py-20">
           <div className="overflow-hidden rounded-3xl border border-gold/40 bg-gold-soft">
             <div className="grid gap-10 p-8 sm:p-12 lg:grid-cols-[1.2fr_1fr]">
               <div>
@@ -219,8 +219,8 @@ export default function Home() {
         </section>
 
         {/* ── Ubicaciones ──────────────────────────────────── */}
-        <section id="ubicaciones" className="scroll-mt-20 border-t border-line">
-          <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+        <section id="ubicaciones" className="scroll-mt-28 border-t border-line sm:scroll-mt-20">
+          <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
             <SectionLabel>Ubicaciones</SectionLabel>
             <h2 className="font-display mt-3 text-3xl text-pine sm:text-4xl">
               Tres ciudades, una red
@@ -279,7 +279,7 @@ export default function Home() {
 
         {/* ── Reseñas ──────────────────────────────────────── */}
         <section className="bg-mint/60">
-          <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+          <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
             <div className="flex flex-wrap items-end justify-between gap-6">
               <div>
                 <SectionLabel>Clientes</SectionLabel>
@@ -327,7 +327,7 @@ export default function Home() {
 
         {/* ── CTA final ────────────────────────────────────── */}
         <section id="registro" className="bg-pine">
-          <div className="mx-auto flex max-w-6xl flex-col items-start gap-7 px-4 py-16 sm:px-6 md:flex-row md:items-center md:justify-between">
+          <div className="mx-auto flex max-w-6xl flex-col items-start gap-7 px-4 py-14 sm:px-6 sm:py-16 md:flex-row md:items-center md:justify-between">
             <div>
               <h2 className="font-display text-3xl text-paper sm:text-4xl">
                 Tu casillero te está esperando

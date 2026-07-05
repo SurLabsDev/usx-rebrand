@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# USX Cargo — Rediseño (demo)
 
-## Getting Started
+Propuesta de rebrand para [usxcargo.com](https://usxcargo.com): landing pública +
+panel de cliente completo, construida en Next.js (App Router) y Tailwind CSS v4.
 
-First, run the development server:
+**Es un mockup.** No hay backend ni login: todos los datos (usuario, paquetes,
+guías, movimientos, direcciones) son ficticios y viven en
+[`src/lib/data.ts`](src/lib/data.ts).
+
+## Páginas
+
+| Ruta | Contenido |
+| --- | --- |
+| `/` | Landing: hero con calculadora de tarifas interactiva, cómo funciona, tarifas, servicio de Compras, ubicaciones, reseñas |
+| `/panel` | Resumen: ahorro, estado de cuenta, próximos vuelos |
+| `/panel/paquetes` | Paquetes en casillero |
+| `/panel/guias` | Guía activa con timeline de seguimiento |
+| `/panel/delivery` | Envíos a dirección (estado vacío) |
+| `/panel/destinatarios` | Destinatarios y franquicias |
+| `/panel/direcciones` | Direcciones de casillero con botones de copiar |
+| `/panel/cuenta` | Saldo, pagos y movimientos |
+| `/panel/compras` | Carritos del servicio de Compras |
+
+## Sistema de diseño
+
+- **Color:** verde pino `#0c3a2d` como color de marca, esmeralda `#177a4c` para
+  acciones, papel cálido `#fafaf7` de fondo y dorado `#e8b54d` reservado para el
+  servicio de Compras. Tokens en [`src/app/globals.css`](src/app/globals.css).
+- **Tipografía:** Archivo variable (expandida en títulos, estilo etiqueta de
+  carga aérea) + IBM Plex Mono para datos duros: trackings, pesos, precios y suites.
+- **Firma visual:** la ruta aérea MIA / MAD → MVD como motivo gráfico
+  ([`src/components/route-motif.tsx`](src/components/route-motif.tsx)), retomada
+  en el timeline de guías.
+
+## Desarrollo
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # verificación de producción
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deploy en Vercel
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Opción A — CLI:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npx vercel        # login + deploy de preview
+npx vercel --prod # deploy a producción
+```
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Opción B — GitHub: subí el repo a GitHub y en [vercel.com/new](https://vercel.com/new)
+importalo; no requiere configuración extra.
